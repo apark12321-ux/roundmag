@@ -147,15 +147,18 @@ function Header() {
 
 function ArticleCard({ article, wide = false }: { article: Article; wide?: boolean }) {
   return (
-    <article className={wide ? "article-card wide" : "article-card"}>
+    <article className={wide ? "article-card wide" : "article-card"} id={article.id}>
       <a href={`#${article.id}`}>
         <figure>
           <img src={article.image} alt={article.title} loading="lazy" />
         </figure>
         <div className="card-copy">
-          <p>{article.category}</p>
+          <p className="card-meta">
+            <span>{article.category}</span>
+            <span>{article.date}</span>
+          </p>
           <h3>{article.title}</h3>
-          <span>{article.description}</span>
+          <span className="card-description">{article.description}</span>
         </div>
       </a>
     </article>
@@ -248,7 +251,7 @@ export default function App() {
 
         <section className="latest" id="news">
           <div className="section-title compact">
-            <h2>Lastest News</h2>
+            <h2>Latest News</h2>
           </div>
           <div className="latest-list">
             {latestItems.map((article) => (
