@@ -1,5 +1,5 @@
 import { roundImages, roundLogo } from "./roundAssets";
-import "./round.css";
+import "./round2.css";
 
 const items = [
   { type: "Cover", title: "DIGITAL COVER 01", text: "Roundmag digital cover archive.", image: roundImages.round_jungwon },
