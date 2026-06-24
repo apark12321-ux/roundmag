@@ -1,0 +1,56 @@
+[
+  {
+    "name": "hero",
+    "webp": "/fashion/hero.webp",
+    "jpg": "/fashion/hero.jpg",
+    "size": [
+      3840,
+      2161
+    ]
+  },
+  {
+    "name": "cover-01",
+    "webp": "/fashion/cover-01.webp",
+    "jpg": "/fashion/cover-01.jpg",
+    "size": [
+      2561,
+      3200
+    ]
+  },
+  {
+    "name": "beauty-closeup",
+    "webp": "/fashion/beauty-closeup.webp",
+    "jpg": "/fashion/beauty-closeup.jpg",
+    "size": [
+      2561,
+      3200
+    ]
+  },
+  {
+    "name": "duo-cover",
+    "webp": "/fashion/duo-cover.webp",
+    "jpg": "/fashion/duo-cover.jpg",
+    "size": [
+      3840,
+      2560
+    ]
+  },
+  {
+    "name": "cover-02",
+    "webp": "/fashion/cover-02.webp",
+    "jpg": "/fashion/cover-02.jpg",
+    "size": [
+      2561,
+      3200
+    ]
+  },
+  {
+    "name": "cover-03",
+    "webp": "/fashion/cover-03.webp",
+    "jpg": "/fashion/cover-03.jpg",
+    "size": [
+      2561,
+      3200
+    ]
+  }
+]

@@ -1,104 +1,110 @@
-import { roundImages, roundLogo } from "./roundAssets";
-import "./round2.css";
+import { Menu, Search } from "lucide-react";
+import "./fashion-launch.css";
 
-const images = [
-  roundImages.round_jungwon,
-  roundImages.round_bambam_purple,
-  roundImages.round_bambam_close,
-  roundImages.highcut_sunghanbin,
-  roundImages.highcut_nana,
-  roundImages.vogue_mona,
-  roundImages.vogue_ate,
-  roundImages.vogue_ida,
-  roundImages.dazed_johnny,
-  roundImages.dazed_enhypen,
-  roundImages.film_strip,
-];
+const assets = {
+  hero: "/fashion/hero.webp",
+  cover01: "/fashion/cover-01.webp",
+  beauty: "/fashion/beauty-closeup.webp",
+  duo: "/fashion/duo-cover.webp",
+  cover02: "/fashion/cover-02.webp",
+  cover03: "/fashion/cover-03.webp",
+};
 
 const stories = [
-  "ROUNDMAG, Beyond the Hue",
-  "Soft Construct",
-  "Clean Skin, Vivid Color",
-  "New Face Archive",
-  "The Cover Files",
-  "City Texture",
-  "Modern Muse",
-  "Fashion Memo",
-  "Beauty Report",
-  "Round Selection",
-  "Editorial Letter",
-  "One Fine Day",
-].map((title, index) => ({ title, image: images[index % images.length] }));
-
-const news = [
-  "Interview · 무엇을 읽는가보다 어떤 방향을 선택하는가",
-  "Cover · 프레임 위에서 시작된 라운드의 첫 터치",
-  "Beauty · 클린한 피부와 선명한 컬러",
-  "Fashion · 컬렉션의 구조와 리듬",
-  "Culture · 취향과 첫 터닝포인트",
-  "News · 프라이데이컴퍼니의 새로운 프로젝트",
+  {
+    label: "COVER STORY",
+    title: "THE FIRST ISSUE",
+    desc: "ROUNDMAG launches with clean silhouettes, architectural light, and a new digital fashion language.",
+    image: assets.cover01,
+  },
+  {
+    label: "BEAUTY",
+    title: "SHARP FOCUS",
+    desc: "A close-up beauty editorial built around texture, gaze, jewelry, and precise light.",
+    image: assets.beauty,
+  },
+  {
+    label: "EDITORIAL",
+    title: "DUO FORM",
+    desc: "Tailoring, contrast, and the quiet confidence of a new generation.",
+    image: assets.duo,
+  },
+  {
+    label: "FASHION",
+    title: "WHITE STRUCTURE",
+    desc: "Minimal color, strong structure, and a premium magazine-ready visual system.",
+    image: assets.cover02,
+  },
+  {
+    label: "STYLE",
+    title: "DRAPED MOOD",
+    desc: "Soft fabric, sculptural posture, and warm shadows for a refined launch mood.",
+    image: assets.cover03,
+  },
 ];
+
+const nav = ["Cover", "Fashion", "Beauty", "Editorial", "Archive", "Contact"];
 
 function Header() {
   return (
-    <header className="rm-header" id="top">
-      <div className="rm-header-top">
-        <a className="rm-menu" href="#top">☰</a>
-        <a className="rm-logo" href="#top"><img src={roundLogo} alt="ROUNDMAG" /></a>
-        <nav className="rm-nav">
-          <a href="#original">Original</a>
-          <a href="#fashion">Fashion</a>
-          <a href="#beauty">Beauty</a>
-          <a href="#lifestyle">Lifestyle</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+    <header className="rf-header">
+      <div className="rf-navline">
+        <a href="#top" className="rf-wordmark">ROUNDMAG</a>
+        <nav>
+          {nav.map((item) => <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>)}
         </nav>
-        <div className="rm-social"><span>IG</span><span>YT</span><span>TT</span><span>⌕</span></div>
+        <div className="rf-icons">
+          <span>IG</span>
+          <span>YT</span>
+          <Search size={16} strokeWidth={1.7} />
+          <Menu size={20} strokeWidth={1.7} />
+        </div>
       </div>
-      <div className="rm-masthead">ROUNDMAG</div>
+      <div className="rf-masthead">ROUNDMAG</div>
     </header>
   );
 }
 
 function Hero() {
   return (
-    <section className="rm-hero">
-      <div className="rm-hero-text">
-        <p>June Digital Issue · Seoul</p>
-        <h1>Beyond<br />the Hue</h1>
-        <span>라운드매거진이 기록하는 지금의 얼굴, 패션, 뷰티, 컬처.</span>
+    <section className="rf-hero" id="cover">
+      <div className="rf-hero-image">
+        <picture>
+          <source srcSet={assets.hero} type="image/webp" />
+          <img src="/fashion/hero.jpg" alt="ROUNDMAG launch hero" fetchPriority="high" />
+        </picture>
       </div>
-      <figure><img src={roundImages.film_strip} alt="ROUNDMAG cover" /></figure>
+      <div className="rf-hero-copy">
+        <p className="rf-kicker">DIGITAL FASHION MAGAZINE · LAUNCH ISSUE</p>
+        <h1>NEW<br />VISUAL<br />LANGUAGE</h1>
+        <p>
+          라운드매거진을 완전히 새롭게 런칭하는 패션 매거진 톤으로 재구성했습니다.
+          흐린 기존 이미지는 제거하고, AI로 새로 만든 고해상도 패션 에디토리얼 이미지만 사용합니다.
+        </p>
+      </div>
     </section>
   );
 }
 
 function CoverStories() {
   return (
-    <section className="rm-section" id="original">
-      <div className="rm-section-title"><p>Digital Covers</p><h2>Cover Stories</h2></div>
-      <div className="rm-feature-grid">
-        {stories.slice(0, 3).map((story, index) => (
-          <article className={index === 0 ? "rm-feature-card large" : "rm-feature-card"} key={story.title}>
-            <figure><img src={story.image} alt={story.title} /></figure>
-            <p>{index === 0 ? "Digital Cover" : "Cover Story"}</p>
-            <h3>{story.title}</h3>
-          </article>
-        ))}
+    <section className="rf-section" id="fashion">
+      <div className="rf-section-head">
+        <span>01</span>
+        <h2>Cover Stories</h2>
+        <p>보그·데이즈드·바자 계열의 대형 타이포, 인물 중심 화보, 넓은 여백, 강한 에디토리얼 구성을 라운드매거진용으로 재해석했습니다.</p>
       </div>
-    </section>
-  );
-}
-
-function EditorialGrid() {
-  return (
-    <section className="rm-section" id="fashion">
-      <div className="rm-section-title"><p>Editor's Picks</p><h2>Fashion · Beauty · Culture</h2></div>
-      <div className="rm-editorial-grid">
+      <div className="rf-cover-grid">
         {stories.map((story, index) => (
-          <article className={index === 1 || index === 7 ? "rm-card tall" : "rm-card"} key={story.title}>
-            <figure><img src={story.image} alt={story.title} /></figure>
-            <h3>{story.title}</h3>
+          <article className={`rf-card rf-card-${index + 1}`} key={story.title}>
+            <figure>
+              <img src={story.image} alt={story.title} loading={index < 2 ? "eager" : "lazy"} decoding="async" />
+            </figure>
+            <div>
+              <span>{story.label}</span>
+              <h3>{story.title}</h3>
+              <p>{story.desc}</p>
+            </div>
           </article>
         ))}
       </div>
@@ -106,46 +112,68 @@ function EditorialGrid() {
   );
 }
 
-function OriginalBoard() {
+function BeautyFeature() {
   return (
-    <section className="rm-board" id="beauty">
-      <div className="rm-board-head"><span>Original</span><nav><a>All</a><a>Cover</a><a>Interview</a><a>Shortform</a><a>Editor's Letter</a></nav></div>
-      <div className="rm-board-grid">
-        {stories.map((story) => (
-          <article className="rm-board-card" key={`board-${story.title}`}>
-            <figure><img src={story.image} alt={story.title} /></figure>
+    <section className="rf-beauty" id="beauty">
+      <div>
+        <span>02 · BEAUTY FOCUS</span>
+        <h2>Faces,<br />fabric,<br />focus.</h2>
+        <p>
+          웹에서 흐려 보이지 않도록 업스케일된 WebP/JPG 이미지를 사용하고,
+          이미지는 카드 안에서 `cover` 처리하여 패션 매거진식 크롭으로 선명하게 보이게 했습니다.
+        </p>
+      </div>
+      <figure>
+        <img src={assets.beauty} alt="Beauty editorial closeup" loading="lazy" decoding="async" />
+      </figure>
+    </section>
+  );
+}
+
+function Archive() {
+  return (
+    <section className="rf-archive" id="editorial">
+      <div className="rf-section-head">
+        <span>03</span>
+        <h2>Editorial Index</h2>
+        <p>런칭 후 Cover, Fashion, Beauty, Culture, Campaign 콘텐츠를 이 구조로 확장할 수 있습니다.</p>
+      </div>
+      <div className="rf-index">
+        {stories.map((story, index) => (
+          <a href="#cover" key={story.title}>
+            <strong>{String(index + 1).padStart(2, "0")}</strong>
+            <span>{story.label}</span>
             <h3>{story.title}</h3>
-          </article>
+          </a>
         ))}
       </div>
-    </section>
-  );
-}
-
-function Latest() {
-  return (
-    <section className="rm-latest" id="lifestyle">
-      <div className="rm-section-title"><p>Latest</p><h2>News & Interviews</h2></div>
-      <div className="rm-news-list">
-        {news.map((item, index) => <article key={item}><span>{String(index + 1).padStart(2, "0")}</span><h3>{item}</h3><p>ROUNDMAG EDITORIAL</p></article>)}
-      </div>
-    </section>
-  );
-}
-
-function AboutContact() {
-  return (
-    <section className="rm-about-contact" id="about">
-      <div className="rm-about"><h2>ROUND<br />MAGAZINE</h2><p>라운드매거진은 인물, 패션, 뷰티, 컬처를 하나의 시선으로 엮는 디지털 매거진입니다.</p></div>
-      <div className="rm-contact" id="contact"><h3>&lt;ROUNDMAG&gt;</h3><p>(주)프라이데이컴퍼니<br />서울 성동구 성수이로 66 서울숲 드림타워 408호</p></div>
     </section>
   );
 }
 
 function Footer() {
-  return <footer className="rm-footer"><img src={roundLogo} alt="ROUNDMAG" /><p>www.roundmag.kr<br />© FRIDAY COMPANY. All rights reserved.</p></footer>;
+  return (
+    <footer className="rf-footer" id="contact">
+      <div className="rf-footer-logo">ROUNDMAG</div>
+      <div className="rf-footer-info">
+        <p>About<br />Contact<br />Media Kit<br />Instagram</p>
+        <p>(주)프라이데이컴퍼니<br />서울 성동구 성수이로 66 서울숲 드림타워 408호<br />E. info@roundmag.kr</p>
+      </div>
+    </footer>
+  );
 }
 
 export default function App() {
-  return <div className="rm-site"><Header /><main><Hero /><CoverStories /><EditorialGrid /><OriginalBoard /><Latest /><AboutContact /></main><Footer /></div>;
+  return (
+    <div className="rf-site" id="top">
+      <Header />
+      <main>
+        <Hero />
+        <CoverStories />
+        <BeautyFeature />
+        <Archive />
+      </main>
+      <Footer />
+    </div>
+  );
 }
