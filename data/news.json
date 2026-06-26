@@ -1,0 +1,50 @@
+[
+  {
+    "id": "news-1",
+    "c": "Luxury Trend",
+    "t": "2026 가을/겨울 패션 위크의 주요 테일러링 트렌드 분석",
+    "sub": "BOSS가 추구하는 절제미와 시크한 수트 레이어링의 글로벌 대세화",
+    "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80",
+    "createdAt": "2026-06-25T16:00:00.000Z"
+  },
+  {
+    "id": "news-2",
+    "c": "Client Exclusive",
+    "t": "글로벌 패션 하우스가 주목하는 고감도 디지털 에디토리얼 전략",
+    "sub": "브랜드 아이덴티티를 배가하는 고해상도 PSD 레이아웃과 비주얼 매치",
+    "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80",
+    "createdAt": "2026-06-25T15:00:00.000Z"
+  },
+  {
+    "id": "news-3",
+    "c": "Materiality",
+    "t": "지속가능한 가죽 공정과 최고급 버진 울의 테크니컬 하모니",
+    "sub": "지속가능성을 고려한 럭셔리 패션 브랜드들의 친환경 미래 비전",
+    "imageUrl": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80",
+    "createdAt": "2026-06-25T14:00:00.000Z"
+  },
+  {
+    "id": "news-4",
+    "c": "Atelier Insights",
+    "t": "아틀리에 마스터가 공개하는 최고급 수트 피팅의 비밀",
+    "sub": "어깨 라인과 가슴 포켓의 밀리미터 단위 곡률이 만드는 품위",
+    "imageUrl": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80",
+    "createdAt": "2026-06-24T18:00:00.000Z"
+  },
+  {
+    "id": "news-5",
+    "c": "Couture Fabric",
+    "t": "피부에 직접 닿는 프리미엄 천연 섬유의 가치",
+    "sub": "이탈리아 유서 깊은 패브릭 하우스들과의 콜라보레이션 비하인드",
+    "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80",
+    "createdAt": "2026-06-24T12:00:00.000Z"
+  },
+  {
+    "id": "news-6",
+    "c": "Outerwear Autumn",
+    "t": "트렌치코트의 변치 않는 매력과 새로운 실루엣 가이드",
+    "sub": "전통적인 클래식 디테일에 더해진 오버사이즈와 유니섹스 실루엣의 교차점",
+    "imageUrl": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80",
+    "createdAt": "2026-06-23T09:00:00.000Z"
+  }
+]

@@ -17,3 +17,14 @@ export interface NewsItem {
   imageUrl?: string; // Optional thumbnail preview image
   createdAt: string;
 }
+
+export interface SiteSettings {
+  siteName: string;
+  siteDesc: string;
+  snsInstagram: string;
+  snsYoutube: string;
+  snsPinterest: string;
+  aboutUsText: string;
+  homepageMediaUrl: string;
+  homepageMediaType: string;
+}

@@ -1,36 +1,40 @@
-import React, { useState, useRef } from "react";
-import { Story, NewsItem } from "../types";
-import { Lock, FileText, Image, Plus, Trash2, X, UploadCloud, Check, Key } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
+import { Story, NewsItem, SiteSettings } from "../types";
+import { Lock, FileText, Image, Plus, Trash2, X, UploadCloud, Check, Key, Settings, Video } from "lucide-react";
 
 interface AdminPanelProps {
   stories: Story[];
   news: NewsItem[];
   adminToken: string | null;
+  settings: SiteSettings;
   onLogin: (token: string) => void;
   onLogout: () => void;
   onAddStory: (story: Omit<Story, "id" | "num" | "createdAt">) => Promise<void>;
   onDeleteStory: (id: string) => Promise<void>;
   onAddNews: (news: Omit<NewsItem, "id" | "createdAt">) => Promise<void>;
   onDeleteNews: (id: string) => Promise<void>;
+  onSaveSettings: (settings: SiteSettings) => Promise<void>;
 }
 
 export default function AdminPanel({
   stories,
   news,
   adminToken,
+  settings,
   onLogin,
   onLogout,
   onAddStory,
   onDeleteStory,
   onAddNews,
   onDeleteNews,
+  onSaveSettings,
 }: AdminPanelProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [pin, setPin] = useState("");
   const [pinError, setPinError] = useState("");
   
-  // Tabs: "story" | "news" | "list"
-  const [activeTab, setActiveTab] = useState<"story" | "news" | "list">("story");
+  // Tabs: "story" | "news" | "list" | "settings"
+  const [activeTab, setActiveTab] = useState<"story" | "news" | "list" | "settings">("story");
 
   // New Story Form State
   const [storyTitle, setStoryTitle] = useState("");
@@ -46,6 +50,30 @@ export default function AdminPanel({
   const [newsCategory, setNewsCategory] = useState("Fashion");
   const [newsImageUrl, setNewsImageUrl] = useState("");
   const [isNewsUploading, setIsNewsUploading] = useState(false);
+
+  // Dynamic Site Settings state form fields
+  const [settingsSiteName, setSettingsSiteName] = useState("");
+  const [settingsSiteDesc, setSettingsSiteDesc] = useState("");
+  const [settingsSnsInstagram, setSettingsSnsInstagram] = useState("");
+  const [settingsSnsYoutube, setSettingsSnsYoutube] = useState("");
+  const [settingsSnsPinterest, setSettingsSnsPinterest] = useState("");
+  const [settingsAboutUsText, setSettingsAboutUsText] = useState("");
+  const [settingsMediaUrl, setSettingsMediaUrl] = useState("");
+  const [settingsMediaType, setSettingsMediaType] = useState("video");
+  const [isSettingsUploading, setIsSettingsUploading] = useState(false);
+
+  useEffect(() => {
+    if (settings) {
+      setSettingsSiteName(settings.siteName || "");
+      setSettingsSiteDesc(settings.siteDesc || "");
+      setSettingsSnsInstagram(settings.snsInstagram || "");
+      setSettingsSnsYoutube(settings.snsYoutube || "");
+      setSettingsSnsPinterest(settings.snsPinterest || "");
+      setSettingsAboutUsText(settings.aboutUsText || "");
+      setSettingsMediaUrl(settings.homepageMediaUrl || "");
+      setSettingsMediaType(settings.homepageMediaType || "video");
+    }
+  }, [settings, isOpen]);
 
   const [dragActive, setDragActive] = useState(false);
   const [newsDragActive, setNewsDragActive] = useState(false);

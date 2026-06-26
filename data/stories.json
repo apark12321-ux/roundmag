@@ -1,0 +1,72 @@
+[
+  {
+    "id": "story-1",
+    "num": "01",
+    "title": "The Art of Tailoring",
+    "sub": "완벽한 실루엣과 정교한 피팅이 완성하는 럭셔리 수트의 정수",
+    "c": "Fashion",
+    "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+    "content": "BOSS의 타협하지 않는 테일러링 디테일에서 영감을 얻은 이번 시즌 컬렉션은 클래식한 실루엣을 모던한 비율로 재해석합니다. 어깨 라인의 우아한 곡선과 최고급 버진 울 패브릭이 자아내는 자신감 넘치는 자태. 패션 업계 클라이언트들을 매료시킬 ROUNDMAG의 독창적인 익스클루시브 에디토리얼 화보.",
+    "createdAt": "2026-06-25T12:00:00.000Z"
+  },
+  {
+    "id": "story-2",
+    "num": "02",
+    "title": "Monochromatic Persona",
+    "sub": "블랙과 베이지가 선사하는 고결하고 당당한 무채색의 미학",
+    "c": "Original",
+    "imageUrl": "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=80",
+    "content": "화려한 데코레이션을 배제하고 오직 톤온톤의 깊이감과 가죽 텍스처의 대조만으로 완성된 압도적인 모노크롬 캠페인. BOSS 컨셉의 자신감 있고 당당한 실루엣이 도심 속 세련된 에티튜드를 완벽하게 대변합니다.",
+    "createdAt": "2026-06-25T14:00:00.000Z"
+  },
+  {
+    "id": "story-3",
+    "num": "03",
+    "title": "Couture Craftsmanship",
+    "sub": "전통과 혁신이 빚어내는 최고급 레더 크래프트의 숨결",
+    "c": "Fashion",
+    "imageUrl": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80",
+    "content": "세밀한 스티치 한 땀 한 땀에 깃든 가죽 가공 기법은 단순한 의류를 넘어 하나의 예술품으로 자리 잡습니다. 정제된 메탈 하드웨어와 실크 라이닝의 섬세한 결합이 선사하는 범접할 수 없는 디테일의 아름다움.",
+    "createdAt": "2026-06-25T16:00:00.000Z"
+  },
+  {
+    "id": "story-4",
+    "num": "04",
+    "title": "Bold Sophistication",
+    "sub": "기존의 정형성을 깨뜨리는 해체주의적 수트 스타일링",
+    "c": "Original",
+    "imageUrl": "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1200&q=80",
+    "content": "전통적인 테일러링의 경계를 허물고, 편안한 실루엣에 구조적인 아름다움을 가미한 스마트 럭셔리 컬렉션. 활동적인 현대 패션 비즈니스 리더들을 위한 지적인 테일러 패션의 신기원.",
+    "createdAt": "2026-06-25T18:00:00.000Z"
+  },
+  {
+    "id": "story-5",
+    "num": "05",
+    "title": "Modern Outerwear Icon",
+    "sub": "시대를 관통하는 트렌치코트의 시크하고 강인한 실루엣",
+    "c": "Lifestyle",
+    "imageUrl": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=80",
+    "content": "차가운 가을바람을 막아주는 탄탄한 코튼 개버딘 소재와 더블브레스트 버튼의 헤리티지 감성. 무심히 묶어 올린 벨트 라인에서 풍기는 도회적인 카리스마는 오직 성숙한 애티튜드를 아는 이들을 위해 준비되었습니다.",
+    "createdAt": "2026-06-26T01:00:00.000Z"
+  },
+  {
+    "id": "story-6",
+    "num": "06",
+    "title": "Uncompromised Pure Fabric",
+    "sub": "피부에 감기는 이탈리안 프리미엄 캐시미어의 압도적 질감",
+    "c": "Beauty",
+    "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80",
+    "content": "어떠한 첨가물 없이 본연의 유연함과 은은한 윤기를 담아낸 퓨어 캐시미어 니트웨어. 한 폭의 유화처럼 부드러운 흐름을 그리는 직조 라인은 명품 브랜드들이 가장 탐내는 궁극의 럭셔리 터치입니다.",
+    "createdAt": "2026-06-26T02:00:00.000Z"
+  },
+  {
+    "id": "story-7",
+    "num": "07",
+    "title": "The Premium Accent",
+    "sub": "전체 룩의 완성도를 높이는 익스클루시브 메탈릭 오브제",
+    "c": "Beauty",
+    "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
+    "content": "미니멀한 슬랙스와 셔츠 조합 위에 정교한 주얼리와 안경, 레더 벨트 악센트를 가미해 한층 입체감 있는 클래식 스타일을 연출합니다. 디테일의 사소한 차이가 명품 컬렉션의 진가를 입증합니다.",
+    "createdAt": "2026-06-26T03:00:00.000Z"
+  }
+]
