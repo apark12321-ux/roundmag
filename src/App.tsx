@@ -687,10 +687,10 @@ export default function App() {
             {/* Mobile Footer Info Block with Inquiry Links matching imweb structure */}
             <div className="space-y-6 pt-12 border-t border-zinc-900">
               <div className="space-y-2 text-xs text-zinc-400 max-w-sm font-sans">
-                <p className="font-bold text-zinc-200 text-sm">주식회사프라이데이컴퍼니 (roundmag)</p>
-                <p>서울 성동구 성수이로 66 서울숲 드림타워 408호</p>
-                <p>보도 자료: info@roundmag.co.kr</p>
-                <p>광고 문의: ad@roundmag.co.kr</p>
+                <p className="font-bold text-zinc-200 text-sm">주식회사 프라이데이컴퍼니</p>
+                <p>대표: 박준희  ·  등록번호: 152-88-00989</p>
+                <p>서울 성동구 성수이로 66, 408호</p>
+                <p>이메일: info@roundmag.co.kr</p>
               </div>
 
               {/* Social links inside drawer */}
@@ -803,7 +803,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/30 pointer-events-none z-10" />
 
                 {/* Overlying Content Card: Splitting fluid translation transitions */}
-                <div className="absolute bottom-0 left-0 right-0 max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-16 text-white z-20 flex flex-col items-start select-none">
+                <div className="absolute bottom-0 left-0 right-0 max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-18 text-white z-20 flex flex-col items-start select-none">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeHeroStory.id}
@@ -819,40 +819,40 @@ export default function App() {
                         y: { type: "spring", stiffness: 55, damping: 16 },
                         x: { type: "spring", stiffness: 40, damping: 22 }
                       }}
-                      className="space-y-4"
+                      className="space-y-5"
                     >
-                      <div className="inline-flex items-center gap-2 bg-zinc-900/50 backdrop-blur-md border border-zinc-800 text-zinc-300 text-[10px] sm:text-xs font-bold tracking-[0.25em] px-3.5 py-1.5 rounded-none uppercase font-sans">
+                      <div className="inline-flex items-center gap-2 bg-zinc-900/60 backdrop-blur-md border border-zinc-850 text-zinc-300 text-[11px] sm:text-xs font-bold tracking-[0.25em] px-4 py-2 uppercase font-sans">
                         ROUNDMAG ORIGINAL · {activeHeroStory.c}
                       </div>
 
                       {/* Title Header */}
                       <div className="relative select-none py-1">
                         <h1 
-                          className="relative font-sans text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-none max-w-4xl cursor-pointer hover:text-zinc-350 transition-colors duration-200" 
+                          className="relative font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight leading-[1.05] max-w-5xl cursor-pointer hover:text-zinc-350 transition-colors duration-200" 
                           onClick={() => setSelectedStory(activeHeroStory)}
                         >
                           {activeHeroStory.title}
                         </h1>
                       </div>
 
-                      <p className="text-sm sm:text-base text-zinc-350 max-w-2xl font-sans font-light tracking-wide leading-relaxed line-clamp-2">
+                      <p className="text-base sm:text-lg text-zinc-300 max-w-2xl font-sans font-normal tracking-wide leading-relaxed line-clamp-2">
                         {activeHeroStory.sub || "하나의 컬러로 규정할 수 없는, 대체불가 라운드맥의 특별한 시너지를 만나보세요."}
                       </p>
 
-                      <div className="pt-2 flex items-center gap-4">
+                      <div className="pt-3 flex items-center gap-4">
                         <button 
                           onClick={() => setSelectedStory(activeHeroStory)}
-                          className="bg-white hover:bg-zinc-900 hover:text-white text-zinc-950 text-xs font-bold tracking-widest uppercase px-7 py-3.5 rounded-none transition duration-150 shadow-md cursor-pointer font-sans"
+                          className="bg-white hover:bg-zinc-900 hover:text-white text-zinc-950 text-xs sm:text-sm font-bold tracking-widest uppercase px-8 py-4 rounded-none transition duration-150 shadow-md cursor-pointer font-sans"
                         >
                           Read Editorial Story
                         </button>
                         
                         <button
                           onClick={(e) => toggleLike(activeHeroStory.id, e)}
-                          className="p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full hover:bg-white/20 text-white transition cursor-pointer"
+                          className="p-3.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full hover:bg-white/20 text-white transition cursor-pointer"
                           title="좋아요 보관"
                         >
-                          <Heart className={`h-4.5 w-4.5 ${likedStories.includes(activeHeroStory.id) ? "fill-red-500 text-red-500 stroke-red-500" : "text-white"}`} />
+                          <Heart className={`h-5 w-5 ${likedStories.includes(activeHeroStory.id) ? "fill-red-500 text-red-500 stroke-red-500" : "text-white"}`} />
                         </button>
                       </div>
                     </motion.div>
@@ -918,14 +918,14 @@ export default function App() {
 
             {/* COVER STORIES SECTION - Elegant Minimalist Grid */}
             <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 relative z-10">
-              <div className="flex items-baseline justify-between mb-10 border-b border-zinc-900 pb-4">
-                <div className="space-y-1">
-                  <span className="font-serif text-3xl font-black text-zinc-100 uppercase tracking-wide">
+              <div className="flex items-baseline justify-between mb-10 border-b border-zinc-900 pb-5">
+                <div className="space-y-1.5">
+                  <span className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-100 uppercase tracking-wide">
                     Cover Stories
                   </span>
-                  <p className="text-xs text-zinc-500 font-serif italic">ROUNDMAG signature curations and visual highlights</p>
+                  <p className="text-sm text-zinc-400 font-serif italic">ROUNDMAG signature curations and visual highlights</p>
                 </div>
-                <span className="text-xs font-mono tracking-wider text-zinc-400 uppercase">Issue [01-0{stories.length}]</span>
+                <span className="text-xs sm:text-sm font-mono tracking-wider text-zinc-400 uppercase">Issue [01-0{stories.length}]</span>
               </div>
 
               {stories.length > 0 ? (
@@ -976,14 +976,14 @@ export default function App() {
                       </div>
 
                       {/* Text details below */}
-                      <div className="space-y-1 px-1">
-                        <span className="text-[10px] font-sans text-zinc-400 tracking-[0.15em] uppercase font-semibold">
+                      <div className="space-y-2 px-1">
+                        <span className="text-[11px] sm:text-xs font-sans text-zinc-400 tracking-[0.15em] uppercase font-bold">
                           {story.c}
                         </span>
-                        <h3 className="font-serif text-base font-bold text-zinc-100 leading-tight group-hover:text-zinc-300 transition-colors duration-200 line-clamp-1">
+                        <h3 className="font-serif text-[18px] sm:text-[20px] font-bold text-zinc-100 leading-tight group-hover:text-zinc-300 transition-colors duration-200 line-clamp-1">
                           {story.title}
                         </h3>
-                        <p className="text-xs text-zinc-400 leading-snug line-clamp-2">
+                        <p className="text-sm text-zinc-400 leading-relaxed line-clamp-2">
                           {story.sub}
                         </p>
                       </div>
@@ -1001,15 +1001,15 @@ export default function App() {
             <section className="bg-[#08080c] py-24 border-t border-b border-zinc-900/60 relative z-10 animate-fade-in">
               <div className="max-w-7xl mx-auto px-4 md:px-8">
                 
-                <div className="flex items-baseline justify-between mb-10 border-b border-zinc-800 pb-4">
-                  <div className="space-y-1">
-                    <span className="font-serif text-3xl font-black text-zinc-100 uppercase tracking-wide flex items-center gap-2">
+                <div className="flex items-baseline justify-between mb-10 border-b border-zinc-800 pb-5">
+                  <div className="space-y-1.5">
+                    <span className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-100 uppercase tracking-wide flex items-center gap-2">
                       <Radio className="h-5 w-5 text-cyan-400 animate-pulse" />
                       Latest news
                     </span>
-                    <p className="text-xs text-zinc-500 font-serif italic">Fresh reports, designer insights, and daily updates</p>
+                    <p className="text-sm text-zinc-400 font-serif italic">Fresh reports, designer insights, and daily updates</p>
                   </div>
-                  <span className="text-xs text-zinc-400 font-mono">[{news.length} articles]</span>
+                  <span className="text-xs sm:text-sm font-mono text-zinc-400">[{news.length} articles]</span>
                 </div>
 
                 {news.length > 0 ? (
@@ -1037,15 +1037,15 @@ export default function App() {
 
                         {/* Text Detail blocks */}
                         <div className="flex-grow flex flex-col justify-between space-y-3">
-                          <div className="space-y-1.5">
-                            <span className="text-[10px] text-zinc-450 tracking-widest uppercase font-semibold">
+                          <div className="space-y-2">
+                            <span className="text-[11px] sm:text-xs text-zinc-400 tracking-widest uppercase font-bold">
                               {item.c}
                             </span>
-                            <h4 className="font-serif text-base font-bold text-zinc-100 group-hover:text-zinc-300 leading-snug line-clamp-2 transition-colors duration-200">
+                            <h4 className="font-serif text-[18px] sm:text-[20px] font-bold text-zinc-100 group-hover:text-zinc-300 leading-snug line-clamp-2 transition-colors duration-200">
                               {item.t}
                             </h4>
                             {item.sub && (
-                              <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed font-sans">
+                              <p className="text-sm text-zinc-400 line-clamp-2 leading-relaxed font-sans">
                                 {item.sub}
                               </p>
                             )}
@@ -1687,33 +1687,33 @@ export default function App() {
             </div>
 
             {/* Right Column: Scrollable editorial content */}
-            <div className="flex-grow overflow-y-auto p-6 md:p-10 flex flex-col justify-between bg-zinc-950/80 backdrop-blur-xl">
+            <div className="flex-grow overflow-y-auto p-5 sm:p-8 md:p-12 flex flex-col justify-between bg-zinc-950/90 backdrop-blur-xl">
               
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div className="flex items-center justify-between border-b border-zinc-900 pb-4">
-                  <span className="text-[10px] font-mono text-cyan-400 tracking-wider font-bold">// ROUNDMAG SEC-DECRYPT · ISSUE 0{selectedStory.num}</span>
+                  <span className="text-xs font-mono text-zinc-400 tracking-wider font-bold">// ROUNDMAG SEC-DECRYPT · ISSUE 0{selectedStory.num}</span>
                   <button 
                     onClick={() => {
                       playTechBeep(800, 0.05, "sine");
                       setSelectedStory(null);
                     }} 
-                    className="p-1.5 rounded-full hover:bg-zinc-900 text-zinc-400 hover:text-cyan-400 transition cursor-pointer"
+                    className="p-2 rounded-full hover:bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer"
                   >
-                    <X className="h-4.5 w-4.5" />
+                    <X className="h-5 w-5" />
                   </button>
                 </div>
 
-                <div className="space-y-3">
-                  <span className="text-[9px] font-bold text-cyan-300 font-mono tracking-widest bg-cyan-950/50 border border-cyan-500/20 px-2.5 py-1 uppercase">{selectedStory.c}</span>
-                  <h2 className="font-serif text-2xl md:text-3xl font-extrabold text-zinc-100 leading-tight">
+                <div className="space-y-4">
+                  <span className="text-[10px] sm:text-xs font-bold text-zinc-300 font-mono tracking-widest bg-zinc-900 border border-zinc-800 px-3 py-1.5 uppercase inline-block">{selectedStory.c}</span>
+                  <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-100 leading-tight">
                     {selectedStory.title}
                   </h2>
-                  <p className="text-sm italic font-serif text-zinc-400 border-l-2 border-cyan-500 pl-3 py-1.5 bg-cyan-950/10">
+                  <p className="text-base sm:text-lg italic font-serif text-zinc-300 border-l-2 border-zinc-500 pl-4 py-2 bg-zinc-900/40">
                     {selectedStory.sub}
                   </p>
                 </div>
 
-                <p className="text-zinc-300 text-justify text-sm md:text-base leading-relaxed break-all whitespace-pre-wrap font-sans border-t border-zinc-900 pt-5">
+                <p className="text-zinc-200 text-justify text-[15px] sm:text-[17px] md:text-[18px] leading-relaxed md:leading-loose break-all whitespace-pre-wrap font-sans border-t border-zinc-900 pt-6">
                   {selectedStory.content || "상세한 매거진 에디토리얼 단독 글이 곧 발행됩니다. 잠시만 가라앉은 사색의 핏을 기대해 주십시오."}
                 </p>
               </div>
@@ -1773,21 +1773,21 @@ export default function App() {
       {/* NEWS ITEM MODAL DETAIL READER OVERLAY */}
       {selectedNews && (
         <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-md animate-fade-in font-sans">
-          <div className="bg-zinc-950 text-zinc-100 border border-zinc-900 rounded-none w-full max-w-lg p-6 shadow-2xl relative animate-scale-up">
+          <div className="bg-zinc-950 text-zinc-100 border border-zinc-900 rounded-none w-full max-w-xl p-6 sm:p-8 shadow-2xl relative animate-scale-up">
             
             <button 
               onClick={() => {
                 playTechBeep(800, 0.05, "sine");
                 setSelectedNews(null);
               }}
-              className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-zinc-900 text-zinc-400 hover:text-cyan-400 transition cursor-pointer"
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer"
             >
-              <X className="h-4.5 w-4.5" />
+              <X className="h-5 w-5" />
             </button>
 
             <div className="space-y-6">
               <div className="flex items-center gap-2 border-b border-zinc-900 pb-3">
-                <span className="text-[10px] text-cyan-300 font-bold bg-cyan-950/45 border border-cyan-400/20 px-2 py-0.5 uppercase font-mono">
+                <span className="text-xs text-zinc-300 font-bold bg-zinc-900 border border-zinc-800 px-3 py-1 uppercase font-mono">
                   {selectedNews.c}
                 </span>
                 <span className="text-xs text-zinc-500 font-mono">// SIGNAL RE-ROUTE : {new Date(selectedNews.createdAt).toLocaleDateString()}</span>
@@ -1800,15 +1800,15 @@ export default function App() {
               )}
 
               <div className="space-y-2">
-                <h3 className="font-serif text-xl md:text-2xl font-bold text-zinc-100 leading-tight">
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-zinc-100 leading-tight">
                   {selectedNews.t}
                 </h3>
                 {selectedNews.sub && (
-                  <p className="text-xs italic font-serif text-zinc-400 border-l border-cyan-500/50 pl-2">{selectedNews.sub}</p>
+                  <p className="text-sm italic font-serif text-zinc-300 border-l-2 border-zinc-500 pl-3">{selectedNews.sub}</p>
                 )}
               </div>
 
-              <div className="text-xs md:text-sm text-zinc-400 leading-relaxed space-y-3 font-sans pt-4 border-t border-zinc-900">
+              <div className="text-sm sm:text-base text-zinc-300 leading-relaxed space-y-4 font-sans pt-4 border-t border-zinc-900">
                 <p>본 기사는 라운드매그 디지털 에디토리얼을 통해 취재 및 기획된 공간 뉴스입니다.</p>
                 <p>공간을 구성하는 사물들과 예술적인 미학을 매개로 제작된 상세 큐레이션은 ROUNDMAG 매거진 리포트를 통해 감상해 보실 수 있습니다.</p>
               </div>
@@ -1879,8 +1879,8 @@ export default function App() {
                 {settings.siteName}
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed max-w-xs font-sans">
-                감각적인 미니멀리즘 시각과 가구, 건축, 공간 디자이너들의 고요한 조형적 가치를 수렴하여 일상 속 깊은 우아함과 영감을 선사하는 프리미엄 디지털 매거진 {settings.siteName}.
-                <span className="block mt-1.5 text-cyan-400/80 italic font-medium">{settings.siteDesc}</span>
+                예술과 공간, 라이프스타일의 깊이 있는 영감을 기록하는 프리미엄 디지털 매거진 {settings.siteName}.
+                <span className="block mt-1.5 text-zinc-500 italic font-medium">{settings.siteDesc}</span>
               </p>
             </div>
 
@@ -1961,7 +1961,7 @@ export default function App() {
             <div className="text-right space-y-1">
               <p>© 2026 {settings.siteName} Corp. All Rights Reserved.</p>
               <p className="text-[10px] text-zinc-500 font-sans">
-                주식회사 프라이데이컴퍼니 ({settings.siteName.toLowerCase()})  ·  대표자명: 박준희  ·  업종: 신문·잡지·언론사  ·  사업자등록번호: 152-88-00989  ·  주소: 서울 성동구 성수이로 66 서울숲 드림타워 408호
+                주식회사 프라이데이컴퍼니  ·  대표: 박준희  ·  사업자등록번호: 152-88-00989  ·  주소: 서울 성동구 성수이로 66, 408호
               </p>
             </div>
           </div>
