@@ -828,7 +828,7 @@ export default function App() {
                       {/* Title Header */}
                       <div className="relative select-none py-1">
                         <h1 
-                          className="relative font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight leading-[1.05] max-w-5xl cursor-pointer hover:text-zinc-350 transition-colors duration-200" 
+                          className="relative font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.02] max-w-5xl cursor-pointer hover:text-zinc-350 transition-colors duration-200" 
                           onClick={() => setSelectedStory(activeHeroStory)}
                         >
                           {activeHeroStory.title}
