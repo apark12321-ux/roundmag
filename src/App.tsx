@@ -173,6 +173,21 @@ export default function App() {
   // Mobile drawer state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Scroll tracking to elegant hide/fade navigation elements and prevent duplications
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 120) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Admin access token
   const [adminToken, setAdminToken] = useState<string | null>(() => {
     return localStorage.getItem("roundmag_admin_token");
@@ -519,7 +534,9 @@ export default function App() {
             onClick={() => {
               handleTabClick("home");
             }}
-            className="cursor-pointer font-serif text-2xl md:text-3xl font-extrabold tracking-[0.25em] text-zinc-100 hover:text-white transition-colors uppercase relative group"
+            className={`cursor-pointer font-serif text-2xl md:text-3xl font-extrabold tracking-[0.25em] text-zinc-100 hover:text-white transition-all duration-500 uppercase relative group ${
+              activeTab === "home" && !isScrolled ? "opacity-0 pointer-events-none translate-y-[-4px]" : "opacity-100 translate-y-0"
+            }`}
             id="brand-logo"
           >
             {settings.siteName}
@@ -716,7 +733,37 @@ export default function App() {
         {/* TAB 1: HOME VIEW                                          */}
         {/* ========================================================= */}
         {activeTab === "home" && (
-          <div className="animate-fade-in">
+          <div className="animate-fade-in animate-duration-500">
+            
+            {/* Elegant Brand Header Banner to match the premium fashion magazine layout */}
+            <div className="max-w-7xl mx-auto px-4 md:px-8 pt-8 pb-6 flex flex-col items-center justify-center relative z-10 select-none">
+              {/* Giant Brand Name in Outfit/Syne sharp typography */}
+              <h1 className="font-serif text-5xl sm:text-7xl md:text-9xl font-bold tracking-[-0.03em] text-zinc-100 text-center uppercase leading-[0.95] hover:text-zinc-300 transition duration-300">
+                {settings.siteName}
+              </h1>
+              
+              {/* Categories Navigation Link Bar (Matches screenshot 1) */}
+              <div className="w-full border-t border-zinc-900 mt-8 pt-4">
+                <div className="flex items-center justify-center space-x-6 sm:space-x-10 text-[11px] sm:text-xs font-semibold tracking-widest text-zinc-400 font-sans uppercase overflow-x-auto scrollbar-none pb-2">
+                  {[
+                    { id: "original", label: "Cover" },
+                    { id: "fashion", label: "Fashion" },
+                    { id: "beauty", label: "Beauty" },
+                    { id: "original", label: "Editorial" },
+                    { id: "lifestyle", label: "Archive" },
+                    { id: "studio", label: "Co-Studio" }
+                  ].map((item, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleTabClick(item.id)}
+                      className="hover:text-white transition duration-200 whitespace-nowrap cursor-pointer hover:underline underline-offset-4"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
             
             {/* MEGA HERO VIEW CAROUSEL (ROUNDMAG PREMIUM AI-SENSORY SLIDER) */}
             {stories.length > 0 ? (
